@@ -17,11 +17,6 @@ module.exports = {
 
         return $.isArray(todos) ? todos : [];
 
-        // if($.isArray(todos)){
-        //     return todos;
-        // }else{
-        //     return [];
-        // }
     },
     filterTodos:function(todos, showCompleted, searchText){
         var filteredTodos = todos;
@@ -31,10 +26,10 @@ module.exports = {
             return !todo.completed || showCompleted;
         })
         //filtred by searchText
-        filteredTodos = filteredTodos.filter((todo)=>{
-            var text = todo.text.toLowerCase()
+        filteredTodos = filteredTodos.filter((todo) => {
+            var text = todo.text.toLowerCase();
             return searchText.length === 0 || text.indexOf(searchText) > -1;
-        })
+        });
 
         //sort todos with nono completed first
         filteredTodos.sort((a,b) =>{

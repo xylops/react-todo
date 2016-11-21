@@ -1,7 +1,6 @@
 var uuid = require('node-uuid');
 var moment = require('moment');
 
-
 export var searchTextReducer = (state = '', action)=>{
     switch (action.type){
         case 'SET_SEARCH_TEXT':
@@ -33,8 +32,6 @@ export var todosReducer = (state = [], action) => {
                     completeAt:undefined,
                 }
             ];
-
-        //add case for TOGGLE_TODO completed equal to opposite vale & updateCompletedAt
         case 'TOGGLE_TODO':
             return state.map((todo)=>{
                 if(todo.id === action.id){
@@ -48,6 +45,11 @@ export var todosReducer = (state = [], action) => {
                     return todo;
                 }
             })
+        case 'ADD_TODOS':
+            return[
+                ...state,
+                ...action.todos
+            ];
         default:
             return state;
     }
