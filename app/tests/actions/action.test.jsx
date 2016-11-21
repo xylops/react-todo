@@ -25,9 +25,9 @@ describe('Actions', ()=>{
 
     it('should generate toggle show competed action',()=>{
         var action = {
-            type:'TOGGLE_SHOW_COMPLETE',
+            type:'TOGGLE_SHOW_COMPLETED',
         }
-        var res = actions.toggleShowComplete();
+        var res = actions.toggleShowCompleted();
 
         expect(res).toEqual(action)
     })
