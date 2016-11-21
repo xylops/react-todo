@@ -11,7 +11,7 @@ export var searchTextReducer = (state = '', action)=>{
     }
 }
 
-export var showCompleteReducer = (state = false, action) =>{
+export var showCompletedReducer = (state = false, action) =>{
     switch(action.type){
         case 'TOGGLE_SHOW_COMPLETED':
             return !state
@@ -20,7 +20,7 @@ export var showCompleteReducer = (state = false, action) =>{
     }
 }
 
-export var todosReducers = (state = [], action) => {
+export var todosReducer = (state = [], action) => {
     switch (action.type){
         case 'ADD_TODO':
             return [
